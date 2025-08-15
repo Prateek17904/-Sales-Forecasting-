@@ -1,0 +1,43 @@
+# Sales Forecasting – Traditional ML Use Case
+
+## Problem Statement
+You are provided with sample sales data that captures customer sales across different plants. 
+Your objective is to predict both the amount ($) and quantity of sales (LBS) for the upcoming 12 months, at both:
+• Customer level, and
+• Plant level
+
+This task involves designing a robust forecasting pipeline using classical or modern ML techniques, 
+grounded in solid exploratory data analysis (EDA) and business logic.
+
+Note: Due to the nature of the business, you might face the fact that enough information is not available 
+to train a perfect model. That is the challenge.
+
+## Key Expectations
+• A thoughtful EDA that highlights seasonality, trend, anomalies, customer/plant behaviors, and other influential factors.
+• Clear feature engineering and group-based modeling strategies (e.g., by plant, customer segment, or region).
+• Selection of appropriate forecasting or regression models with comparative evaluation.
+• Metrics such as MAPE, RMSE, or custom business-defined accuracy metrics.
+• Forecasting outputs for each of the next 12 months, for each (Plant, Customer) pair.
+
+## Key Evaluation Criteria
+• Depth and quality of the EDA.
+• Accuracy of predictions at both plant level and individual customer level at both sales amount ($) and quantity (lbs.)
+• Expecting to see at least 80% accuracy for the plant level predictions
+• Soundness of the modeling strategy – grouping, handling seasonality, segmentation, etc.
+• Justification of model choices and validation strategy.
+• Quality of forecasts, with visualizations and tabular summaries.
+• Clean, maintainable, and reproducible code.
+
+## Disqualifying Approaches
+• Using naïve time series models without understanding the domain or validating assumptions.
+• Skipping EDA and jumping straight to model training without strategy.
+
+## Bonus Points
+• Identification of new, churned, and irregular ordering pattern customers based solely on order history.
+• Architecture for predicting demand for these customer types using patterns derived from past ordering behavior.
+
+## Sample of Training Dataset
+| Unnamed: 0 | WeeklySalesDate | FiscalMonthNameLong | FiscalYear | NativePlantId | ParentPlantName | ParentCustomerId | ParentCustomerNumber | ProductLineCodeDescription | ActualSalesAmt | ActualSalesWt |
+|------------|-----------------|---------------------|------------|---------------|-----------------|------------------|----------------------|----------------------------|----------------|---------------|
+| 0          | 2015-01-11      | January             | 2015       | 499532        | Plant_0         | 9801             | 240548               | Bakery                     | 74892.96       | 32729.3604    |
+| 1          | 2017-08-06      | August              | 2017       | 232139        | Plant_1         | 10958            | 121                  | Finished Goods             | 151443.0       | 58638.88429   |
